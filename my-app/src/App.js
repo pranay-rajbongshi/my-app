@@ -6,7 +6,7 @@ class App extends Component {
   constructor(){
     super()
     this.state = {
-      count: 0
+      time: new Date().toTimeString().split(" ")[0]
     }
   }
 
@@ -15,13 +15,8 @@ class App extends Component {
   }
 
   increment = () => {
-    setInterval(
-      () => {
-        if(this.state.count < 10)
-          return this.setState({  count: this.state.count + 1 })
-        else
-          return this.setState({  count: 0 })
-      },
+    setInterval( 
+      () =>  this.setState({  count: new Date().toTimeString().split(" ")[0] }), 
       1000
     )
   }
